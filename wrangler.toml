@@ -1,6 +1,6 @@
 # Configure Cloudflare Worker
 
-name = "indiantrailcomfortsolutions-dotcom"
+name = "indiantrailcomfortsolutions-web"
 compatibility_date = "2025-07-31"
 
 [build]
