@@ -1,0 +1,20 @@
+// Add your own custom styles here
+@keyframes lights {
+  0%,50% {
+    background-position: top;
+  }
+  50.1%,100% {
+    background-position: bottom;
+  }
+}
+
+//#lights {
+//  background:url(/banners/BdGY6tH_2x.png);
+//  right: 0;
+//  left: 0;
+//  position: absolute;
+//  top: 0;
+//  height: 138px;
+//  animation: lights 1s infinite;
+//  z-index: 10;
+//}

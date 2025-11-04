@@ -1,0 +1,29 @@
+{
+  "name": "indiantrailcomfortsolutions",
+  "description": "indiantrailcomfortsolutions",
+  "version": "0.0.1",
+  "license": "",
+  "author": "Steven Weathers",
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+    "format": "prettier -w ."
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-go-template": "0.0.15",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwind-bootstrap-grid": "^5.1.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@cloudflare/pages-plugin-mailchannels": "^0.1.5"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "type": "standard",
+    "title": "$50 Off",
+    "subtitle": "AC Repair",
+    "features":  [],
+    "terms": ""
+  },
+  {
+    "type": "standard",
+    "title": "$129 Dryer Vent Cleaning",
+    "subtitle": "Regular $199",
+    "features":  [],
+    "terms": ""
+  },
+  {
+    "type": "military",
+    "title": "5% Off Active Military & Veteran's Discount",
+    "subtitle": "",
+    "features": [],
+    "terms": ""
+  }
+]

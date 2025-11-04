@@ -1,0 +1,13 @@
+<section>
+  <div class="container">
+    <div class="pt-14">
+      <h1 class="mb-4 text-itcs_dark">
+        {{ i18n (printf "%s" (lower .Title)) | default .Title | title }}
+      </h1>
+      <!--      {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}-->
+      <div class="w-2/3 lg:w-1/2 flex flex-row shadow shadow-violet-500/50">
+        <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-pink-500 to-pink-300"></div>
+        <div class="h-[2px] w-full bg-gradient-to-r from-pink-300 to-transparent"></div></div>
+    </div>
+  </div>
+</section>

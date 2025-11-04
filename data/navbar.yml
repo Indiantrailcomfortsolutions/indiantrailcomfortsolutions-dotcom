@@ -1,0 +1,10 @@
+navbar_links:
+  - name: Home
+    url: /
+  - name: Services
+    url: /service/
+    children:
+      - name: Sub Service
+        url: /services/sub-service/
+  - name: Contact
+    url: /#contact

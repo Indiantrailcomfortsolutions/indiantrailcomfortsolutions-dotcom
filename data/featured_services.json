@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Air Conditioning",
+    "link": "/services",
+    "icon": "snowflake"
+  },
+  {
+    "title": "Heating",
+    "link": "/services",
+    "icon": "fire"
+  },
+  {
+    "title": "Maintenance",
+    "link": "/services#maintenance",
+    "icon": "screwdriver-wrench"
+  },
+  {
+    "title": "Special Offers",
+    "link": "/special-offers",
+    "icon": "tag"
+  }
+]

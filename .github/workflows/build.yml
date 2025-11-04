@@ -1,0 +1,50 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        NODE_VERSION: [ 20 ]
+        HUGO_VERSION: [ 0.145.0 ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{matrix.HUGO_VERSION}}/hugo_extended_${{matrix.HUGO_VERSION}}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.NODE_VERSION }}
+          cache: 'npm'
+          # The action defaults to search for the dependency file (package-lock.json,
+          # npm-shrinkwrap.json or yarn.lock) in the repository root, and uses its
+          # hash as a part of the cache key.
+          # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify

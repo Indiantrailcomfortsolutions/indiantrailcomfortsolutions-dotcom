@@ -1,0 +1,51 @@
+[
+  {
+    "county_name": "Gaston County",
+    "towns": [
+      "Gastonia",
+      "Belmont",
+      "Dallas",
+      "Cramerton",
+      "Lowell",
+      "Stanley",
+      "Kings Mountain",
+      "Mount Holly",
+      "Ranlo"
+    ]
+  },
+  {
+    "county_name": "Lincoln County",
+    "towns": [
+      "Lincolnton",
+      "Denver"
+    ]
+  },
+  {
+    "county_name": "Cleveland County",
+    "towns": [
+      "Shelby",
+      "Grover",
+      "Waco"
+    ]
+  },
+  {
+    "county_name": "Mecklenburg County",
+    "towns": [
+      "Charlotte",
+      "Huntersville",
+      "Cornelius",
+      "Davidson"
+    ]
+  },
+  {
+    "county_name": "York County",
+    "towns": [
+      "Clover",
+      "Rockhill",
+      "York",
+      "Tega Cay",
+      "Lake Wylie",
+      "Newport"
+    ]
+  }
+]

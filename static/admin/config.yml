@@ -1,0 +1,140 @@
+# when using the default proxy server port
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+logo_url: "/images/logo.png"
+media_folder: static/uploads
+public_folder: /uploads
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/english/_index.md"
+        fields: # List of fields for the category front matter
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta Title", name: "meta_title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Banner", name: "banner", widget: "object", fields: [
+            { label: "Title", name: "title", widget: "string" }
+          ] }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Special Offers Page"
+        name: "special-offers"
+        file: "content/english/pages/special-offers.md"
+        fields: # List of fields for the category front matter
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta Title", name: "meta_title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+    create: false
+    editor:
+      preview: true
+  - name: 'services'
+    label: 'Service Pages'
+    folder: 'content/english/services'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields: # List of fields for the category front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta Title", name: "meta_title", widget: "string" }
+      - { label: "Meta Description", name: "description", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Hidden", name: "hidden", widget: "boolean", default: false, required: false }
+      - { label: "Comments", name: "comments", widget: "boolean", default: true, required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Weight", name: "weight", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Site Settings"
+    name: "settings"
+    files:
+      - label: "General Settings"
+        name: "config"
+        file: "hugo.toml"
+        editor:
+          preview: false
+        fields:
+          - { label: "Base URL", name: "baseURL", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+      - label: "Site Content Parameters"
+        name: "params"
+        editor:
+          preview: false
+        file: "config/_default/params.toml"
+        fields: # List of fields for the category front matter
+          - { label: "Favicon", name: "favicon", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "string" }
+          - { label: "Logo Alt Text", name: "logo_text", widget: "string" }
+          - { label: "Footer Copyright", name: "copyright", widget: "string" }
+          - { label: "Phone Number", name: "phone_number", widget: "object", fields: [
+            { label: "Enable", name: "enable", widget: "boolean" },
+            { label: "Label", name: "label", widget: "string" },
+            { label: "Link", name: "link", widget: "string" }
+          ] }
+  - name: "navbar"
+    label: "Navigation Bar"
+    files:
+      - file: "data/navbar.yml"
+        name: "navbar"
+        label: "Navigation Bar"
+        editor:
+          preview: false
+        fields:
+          - widget: list
+            name: navbar_links
+            label: Navigation Bar Items
+            required: true
+            hint: Appears in the header of the site.
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "string"
+                required: true
+              - label: "URL"
+                name: "url"
+                widget: "string"
+                required: true
+              - label: "Children"
+                name: "children"
+                widget: "list"
+                required: false
+                fields:
+                  - label: "Name"
+                    name: "name"
+                    widget: "string"
+                    required: true
+                  - label: "URL"
+                    name: "url"
+                    widget: "string"
+                    required: true
+
+#logo_url: /images/logo.png
+#backend:
+#  - name: git-gateway
+#    branch: main # Branch to update (optional; defaults to master)
+#  commit_messages:
+#    create: Create {{collection}} “{{slug}}”
+#    update: Update {{collection}} “{{slug}}”
+#    delete: Delete {{collection}} “{{slug}}”
+#    uploadMedia: Upload “{{path}}”
+#    deleteMedia: Delete “{{path}}”
+#    openAuthoring: '{{message}}'
+#publish_mode: simple
+#media_folder: "static/images/uploads"
+#public_folder: "/images/uploads"
+#search: false
+#collections:
+#  - name: services
+#    identifier_field: name
+#  - name: pages
+#      identifier_field: name

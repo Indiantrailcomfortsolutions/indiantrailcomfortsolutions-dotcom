@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+<section class="section">
+    <div class="container">
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {{ range $i, $e := site.Data.special_offers }}
+                    <li class="p-4 border border-itcs_light border-dashed text-center">
+                        <div class="mb-4">{{ partial "logo" }}</div>
+                        <h3 class="text-itcs_dark mb-4">{{ .title }}</h3>
+                        {{if .subtitle}}
+                        <h4 class="mb-4">{{ .subtitle }}</h4>
+                        {{end}}
+                        {{if eq .type "military"}}
+                        <a href="/#contact" class="inline-block rounded-md py-2 px-4 font-bold font-secondary text-2xl border border-red-500 text-red-500 shadow-lg shadow-red-200/80 hover:bg-red-500 hover:text-white uppercase">Schedule Now</a>
+                        {{else}}
+                        <a href="/#contact" class="inline-block rounded-md py-2 px-4 font-bold font-secondary text-2xl border border-pink-500 text-pink-500 shadow-lg shadow-pink-200/80 hover:bg-pink-500 hover:text-white uppercase">Schedule Now</a>
+                        {{end}}
+                    </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+
+{{ end }}
