@@ -54,7 +54,7 @@
 {{ $styles = $styles | append (resources.Get "scss/main.scss" | toCSS) }}
 {{ $styles = $styles | resources.Concat "css/style.css" }}
 {{ $styles = $styles | css.PostCSS }}
-1
+
 {{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}
 {{ $stylesLazy = $stylesLazy | css.PostCSS }}
 
