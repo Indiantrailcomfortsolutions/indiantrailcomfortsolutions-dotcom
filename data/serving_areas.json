@@ -1,51 +1,35 @@
 [
   {
-    "county_name": "Gaston County",
+    "county_name": "Union County, NC",
     "towns": [
-      "Gastonia",
-      "Belmont",
-      "Dallas",
-      "Cramerton",
-      "Lowell",
-      "Stanley",
-      "Kings Mountain",
-      "Mount Holly",
-      "Ranlo"
+      "Indian Trail",
+      "Monroe",
+      "Weddington",
+      "Waxhaw",
+      "Stallings"
     ]
   },
   {
-    "county_name": "Lincoln County",
+    "county_name": "Mecklenburg County, NC",
     "towns": [
-      "Lincolnton",
-      "Denver"
-    ]
-  },
-  {
-    "county_name": "Cleveland County",
-    "towns": [
-      "Shelby",
-      "Grover",
-      "Waco"
-    ]
-  },
-  {
-    "county_name": "Mecklenburg County",
-    "towns": [
+      "Matthews",
+      "Mint Hill",
       "Charlotte",
       "Huntersville",
-      "Cornelius",
-      "Davidson"
+      "Pineville"
     ]
   },
   {
-    "county_name": "York County",
+    "county_name": "Cabarrus County, NC",
     "towns": [
-      "Clover",
-      "Rockhill",
-      "York",
-      "Tega Cay",
-      "Lake Wylie",
-      "Newport"
+      "Concord"
+    ]
+  },
+  {
+    "county_name": "York County, SC",
+    "towns": [
+      "Rock Hill",
+      "Fort Mill"
     ]
   }
 ]

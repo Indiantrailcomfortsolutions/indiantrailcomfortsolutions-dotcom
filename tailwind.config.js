@@ -56,6 +56,7 @@ module.exports = {
         "theme-dark": theme.colors.default.theme_color.theme_dark,
         itcs_light: theme.colors.default.text_color.itcs_light,
         itcs_dark: theme.colors.default.text_color.itcs_dark,
+        itcs_red: theme.colors.default.text_color.itcs_red,
       },
       fontSize: {
         base: font_base + "px",

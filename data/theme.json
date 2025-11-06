@@ -12,8 +12,9 @@
         "default":"#444444",
         "dark":"#040404",
         "light":"#717171",
-        "itcs_light": "#8AB8EA",
-        "itcs_dark": "#033C71"
+        "itcs_light": "#e6edfa",
+        "itcs_dark": "#01359a",
+        "itcs_red": "#ed1f23"
       }
     }
   },

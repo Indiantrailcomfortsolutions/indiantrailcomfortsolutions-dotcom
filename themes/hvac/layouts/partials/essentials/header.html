@@ -98,7 +98,7 @@
       {{ if site.Params.navigation_button.enable }}
         <li class="mt-4 inline-block lg:hidden">
           <a
-            class="inline-block mb-6 rounded-md py-2 px-4 font-bold font-secondary text-2xl lg:inline-block bg-pink-200 text-itcs_dark hover:bg-itcs_dark hover:text-white uppercase"
+            class="inline-block mb-6 rounded-md py-2 px-4 font-bold font-secondary text-2xl lg:inline-block bg-itcs_red text-white hover:bg-itcs_dark hover:text-white uppercase"
             href="{{ site.Params.navigation_button.link | relLangURL }}">
             {{ site.Params.navigation_button.label }}
           </a>
@@ -111,7 +111,7 @@
       {{ if site.Params.navigation_button.enable }}
         <a
                 href="{{ site.Params.navigation_button.link | relLangURL }}"
-                class="rounded-md py-2 px-4 hidden font-bold font-secondary text-2xl lg:inline-block border border-pink-500 text-pink-500 shadow-lg shadow-pink-200/80 hover:bg-pink-500 hover:text-white uppercase">
+                class="rounded-md py-2 px-4 hidden font-bold font-secondary text-2xl lg:inline-block border border-itcs_red bg-itcs_red text-white shadow-lg shadow-itcs_red/80 hover:bg-itcs_dark hover:shadow-itcs_dark/80 hover:border-itcs_dark uppercase">
           {{ site.Params.navigation_button.label }}
         </a>
       {{ end }}
