@@ -1,57 +1,87 @@
-<footer class="bg-theme-light ">
+<footer class="bg-gradient-to-b from-itcs_light to-white border-t-4 border-itcs_dark/20">
   <div class="container">
-    <div class="row items-center py-10">
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
-        <!-- navbar brand/logo -->
-        <a
-          class="navbar-brand inline-block"
-          href="{{ site.Home.RelPermalink }}">
-          {{ partial "logo" }}
-        </a>
+    <div class="row items-center py-12 lg:py-16">
+      <!-- Logo Section -->
+      <div class="lg:col-3 mb-10 lg:mb-0 text-center lg:text-left">
+        <div class="inline-block">
+          <!-- Logo container with shadow and rounded corners to make white background logo look good -->
+          <a
+            class="navbar-brand inline-block bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            href="{{ site.Home.RelPermalink }}"
+            aria-label="Indian Trail Comfort Solutions Home">
+            {{ partial "logo" }}
+          </a>
+          <!-- Company name/tagline below logo -->
+          <div class="mt-4 text-itcs_dark font-secondary text-sm font-semibold tracking-wide hidden lg:block">
+            Your Comfort, Our Priority
+          </div>
+        </div>
       </div>
-      <div class="lg:col-6 mb-8 text-center lg:mb-0">
-        <ul>
-          {{ range site.Menus.footer }}
-            <li class="m-3 inline-block">
-              <a
-                {{ if findRE `^http` .URL }}
-                  target="_blank" rel="noopener"
-                {{ end }}
-                href="{{ if findRE `^#` .URL }}
-                  {{ if not $.IsHome }}
-                    {{ site.Home.RelPermalink }}
-                  {{ end }}{{ .URL }}
-                {{ else }}
-                  {{ .URL | relLangURL }}
-                {{ end }}"
-                >{{ .Name }}</a
-              >
-            </li>
-          {{ end }}
-        </ul>
+      
+      <!-- Navigation Links Section -->
+      <div class="lg:col-6 mb-10 lg:mb-0 text-center">
+        <nav aria-label="Footer Navigation">
+          <ul class="flex flex-wrap justify-center gap-4">
+            {{ range site.Menus.footer }}
+              <li class="inline-block">
+                <a
+                  {{ if findRE `^http` .URL }}
+                    target="_blank" rel="noopener"
+                  {{ end }}
+                  href="{{ if findRE `^#` .URL }}
+                    {{ if not $.IsHome }}
+                      {{ site.Home.RelPermalink }}
+                    {{ end }}{{ .URL }}
+                  {{ else }}
+                    {{ .URL | relLangURL }}
+                  {{ end }}"
+                  class="text-itcs_dark hover:text-itcs_red font-semibold text-sm lg:text-base uppercase tracking-wide transition-colors duration-200 relative group"
+                  >
+                  {{ .Name }}
+                  <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-itcs_red group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </nav>
       </div>
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
-        <ul class="social-icons">
+      
+      <!-- Social Media Section -->
+      <!-- <div class="lg:col-3 mb-8 lg:mb-0 text-center lg:text-right">
+        <div class="mb-3 text-itcs_dark font-secondary text-sm font-semibold tracking-wide">
+          Connect With Us
+        </div>
+        <ul class="social-icons inline-flex justify-center lg:justify-end space-x-3">
           {{ range site.Data.social.main }}
             <li>
               <a
                 target="_blank"
                 aria-label="{{ .name }}"
                 rel="nofollow noopener"
-                href="{{ .link | safeURL }}">
+                href="{{ .link | safeURL }}"
+                class="bg-itcs_dark hover:bg-itcs_red transform hover:scale-110 transition-all duration-200">
                 <i class="{{ .icon }}"></i>
               </a>
             </li>
           {{ end }}
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
-  <div class="border-border  border-t py-7">
-    <div class="text-light  container text-center">
-      <p>
-        {{ site.Params.copyright | markdownify }}
-      </p>
+  
+  <!-- Copyright Section -->
+  <div class="border-t border-itcs_dark/20 py-6 bg-white/50">
+    <div class="container">
+      <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+        <p class="text-itcs_dark/70 text-sm">
+          {{ site.Params.copyright | markdownify }}
+        </p>
+        <p class="text-itcs_dark/60 text-xs">
+          <span class="inline-block">Licensed & Insured</span>
+          <span class="mx-2">•</span>
+          <span class="inline-block">Serving Indian Trail & Surrounding Areas</span>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
