@@ -1,4 +1,31 @@
 // Add your own custom styles here
+
+// Nav item hover states
+// Always rounded for nav links
+.nav-link {
+  border-radius: 0.5rem;
+  transition: color 0.2s, background 0.2s;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #01359a; // ITCS blue
+    border-radius: 0.5rem; // rounded corners
+    text-decoration: none;
+  }
+}
+
+// Always rounded for dropdown links
+.nav-dropdown-link {
+  border-radius: 0.5rem;
+  transition: color 0.2s, background 0.2s;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #01359a; // ITCS blue
+    border-radius: 0.5rem; // rounded corners
+    text-decoration: none;
+  }
+}
 @keyframes lights {
   0%,50% {
     background-position: top;

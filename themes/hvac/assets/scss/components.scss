@@ -43,7 +43,7 @@ main {
   @apply text-white #{!important};
 
   &:hover {
-    @apply text-pink-500 #{!important};
+    @apply text-red-500 #{!important};
   }
 }
 
@@ -52,7 +52,7 @@ main {
   @apply bg-white  h-2.5 w-2.5 opacity-100 mx-1.5 #{!important};
 
   &-active {
-    @apply bg-pink-500  h-3 w-3 #{!important};
+    @apply bg-red-500  h-3 w-3 #{!important};
   }
 }
 

@@ -29,7 +29,12 @@ if (theme.fonts.font_family.secondary) {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./hugo_stats.json"],
-  safelist: [{ pattern: /^swiper-/ }],
+  safelist: [
+    { pattern: /^swiper-/ },
+    // Safelist for standard Tailwind color classes
+    { pattern: /^(bg|text|border|shadow|hover:bg|hover:text|hover:border|hover:shadow)-(red|green|blue|yellow|indigo|purple|pink|gray|slate|zinc|neutral|stone|amber|lime|emerald|teal|cyan|sky|violet|fuchsia|rose)-(50|100|200|300|400|500|600|700|800|900)(\/\d+)?$/ },
+    { pattern: /^focus:(bg|text|border)-(red|green|blue|yellow|indigo|purple|pink|gray|slate|zinc|neutral|stone|amber|lime|emerald|teal|cyan|sky|violet|fuchsia|rose)-(50|100|200|300|400|500|600|700|800|900)$/ },
+  ],
   
   theme: {
     screens: {

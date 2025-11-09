@@ -10,7 +10,7 @@ service_areas:
   title: "Serving Indian Trail, NC & Beyond"
   subtitle: "Proudly Serving Indian Trail, NC & Surrounding Areas"
   enable: true
-  image: "/images/itcsComfort_Region_Map_without_catawba.png"
+  image: "/uploads/areas_served.png"
   imageAlt: "Map of areas we serve surrounding Indian Trail, NC"
 date: 2024-03-24T18:29:06.263Z
 ---
