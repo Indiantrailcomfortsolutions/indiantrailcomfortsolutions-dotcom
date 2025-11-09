@@ -1,47 +1,134 @@
 // Add your own custom styles here
 
-// Nav item hover states
-// Always rounded for nav links
-.nav-link {
-  border-radius: 0.5rem;
-  transition: color 0.2s, background 0.2s;
-  &:hover,
-  &:focus {
-    color: #fff;
-    background-color: #01359a; // ITCS blue
-    border-radius: 0.5rem; // rounded corners
-    text-decoration: none;
+// Specials Page Card Styles
+.special-card {
+  box-shadow: 0 4px 24px 0 rgba(0, 64, 128, 0.07), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+  border-radius: 1.25rem;
+  border: 1.5px dashed #e0e7ef;
+  background: linear-gradient(135deg, #fff 80%, #e0f7fa 100%);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.special-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(0, 128, 64, 0.13), 0 3px 12px 0 rgba(0,0,0,0.08);
+  transform: translateY(-4px) scale(1.025);
+  border-color: #34d399;
+}
+.special-badge-military {
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, #1e3a8a 60%, #2563eb 100%);
+  border: 1.5px solid #fff;
+  box-shadow: 0 2px 8px 0 rgba(30,58,138,0.10);
+}
+
+// Enhanced Contact Form Styles
+.contact-form-enhanced {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 40px rgba(1, 53, 154, 0.08), 
+              0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(230, 237, 250, 0.6);
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
   }
 }
 
-// Always rounded for dropdown links
-.nav-dropdown-link {
-  border-radius: 0.5rem;
-  transition: color 0.2s, background 0.2s;
-  &:hover,
-  &:focus {
-    color: #fff;
-    background-color: #01359a; // ITCS blue
-    border-radius: 0.5rem; // rounded corners
-    text-decoration: none;
-  }
+.form-label-enhanced {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
 }
-@keyframes lights {
-  0%,50% {
-    background-position: top;
+
+.form-input-enhanced {
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #040404;
+  background-color: #f8fafc;
+  background-clip: padding-box;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.625rem;
+  transition: all 0.2s ease-in-out;
+  
+  &::placeholder {
+    color: #94a3b8;
+    opacity: 1;
   }
-  50.1%,100% {
-    background-position: bottom;
+  
+  &:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #01359a;
+    box-shadow: 0 0 0 3px rgba(1, 53, 154, 0.1),
+                0 2px 8px rgba(1, 53, 154, 0.08);
+  }
+  
+  &:hover:not(:focus) {
+    border-color: #cbd5e1;
+    background-color: #ffffff;
   }
 }
 
-//#lights {
-//  background:url(/banners/BdGY6tH_2x.png);
-//  right: 0;
-//  left: 0;
-//  position: absolute;
-//  top: 0;
-//  height: 138px;
-//  animation: lights 1s infinite;
-//  z-index: 10;
-//}
+textarea.form-input-enhanced {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit-enhanced {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  padding: 1rem 2.5rem;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #01359a 0%, #0146c7 100%);
+  border: none;
+  box-shadow: 0 4px 14px rgba(1, 53, 154, 0.25),
+              0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Oswald', sans-serif;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(1, 53, 154, 0.35),
+                0 3px 10px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, #0146c7 0%, #0159f0 100%);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(1, 53, 154, 0.3);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(1, 53, 154, 0.2),
+                0 4px 14px rgba(1, 53, 154, 0.25);
+  }
+}
+
+.form-group {
+  position: relative;
+  
+  input:invalid:not(:placeholder-shown),
+  textarea:invalid:not(:placeholder-shown) {
+    border-color: #ed1f23;
+  }
+  
+  input:valid:not(:placeholder-shown),
+  textarea:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+  }
+}
+
+// ...existing code...

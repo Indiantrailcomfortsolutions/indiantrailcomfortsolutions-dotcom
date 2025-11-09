@@ -1,18 +1,22 @@
 {{ define "main" }}
 {{ partial "page-header" . }}
 
-<section class="section">
+
+<section class="section py-12">
     <div class="container">
-        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <h2 class="text-4xl font-bold text-center mb-10 text-itcs_dark tracking-tight">Special Offers</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ range $i, $e := site.Data.special_offers }}
-                    <li class="p-4 border border-itcs_light border-dashed text-center">
-                        <div class="mb-4">{{ partial "logo" }}</div>
-                        <h3 class="text-itcs_dark mb-4">{{ .title }}</h3>
-                        {{if .subtitle}}
-                        <h4 class="mb-4">{{ .subtitle }}</h4>
-                        {{end}}
-                        <a href="/#contact" class="inline-block rounded-md py-2 px-4 font-bold font-secondary text-2xl border border-green-600 text-green-600 shadow-lg shadow-green-200/80 hover:bg-green-600 hover:text-white uppercase">Schedule Now</a>
-                    </li>
+                <li class="special-card group relative p-6 bg-white/90 rounded-2xl shadow-xl border border-itcs_light/60 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+                    <div class="mb-4 w-16 h-16 flex items-center justify-center bg-itcs_light rounded-full shadow-md">
+                        {{ partial "logo" }}
+                    </div>
+                    <h3 class="text-3xl font-extrabold text-itcs_dark mb-2 tracking-tight">{{ .title }}</h3>
+                    {{ if .subtitle }}
+                        <h4 class="text-lg text-itcs_blue mb-4 font-semibold">{{ .subtitle }}</h4>
+                    {{ end }}
+                    <a href="/#contact" class="mt-10 inline-block rounded-lg py-2 px-6 font-bold font-secondary text-xl border-2 border-green-600 text-green-700 shadow-md hover:bg-green-600 hover:text-white hover:shadow-lg transition-all duration-200 uppercase tracking-wide">Schedule Now</a>
+                </li>
             {{ end }}
         </ul>
     </div>

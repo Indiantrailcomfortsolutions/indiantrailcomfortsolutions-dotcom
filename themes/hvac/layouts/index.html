@@ -162,69 +162,95 @@
   <!-- /Testimonials -->
 
   <!-- Contact -->
-  <section class="section-sm">
+  <section class="section-sm bg-gradient-to-br from-itcs_light to-white">
     <div class="container">
       <div class="row">
-        <div class="md:col-10 lg:col-6 mx-auto" id="contact">
-          <h2 class="text-center">Contact Us</h2>
+        <div class="md:col-10 lg:col-8 mx-auto" id="contact">
+          <div class="text-center mb-8">
+            <h2 class="text-itcs_dark font-secondary uppercase mb-3">Get In Touch</h2>
+            <p class="text-lg text-gray-600">Have a question or need service? We're here to help!</p>
+          </div>
 <!--          <form action="{{ site.Params.contact_form_action }}" method="POST" data-static-form-name="contact">-->
-          <form id="contactForm">
-            <div class="hidden mb-4 font-bold bg-red-200 text-red-800 border border-red-300 p-4" id="contactForm-error">
-              An error occurred trying to send your inquiry, please try again shortly.
+          <form id="contactForm" class="contact-form-enhanced">
+            <div class="hidden mb-6 font-semibold bg-red-50 text-red-700 border-2 border-red-300 rounded-lg p-4 shadow-sm" id="contactForm-error">
+              <span class="inline-block mr-2">⚠️</span> An error occurred trying to send your inquiry, please try again shortly.
             </div>
-            <div class="mb-6">
-              <label>
-              <input
-                      name="name"
-                      class="form-input"
-                      placeholder="Full Name"
-                      title="Full Name"
-                      type="text"
-                      required /></label>
-            </div>
-            <div class="mb-6">
-              <label><input
-                      id="email"
-                      name="email"
-                      class="form-input"
-                      placeholder="Email"
-                      title="Email"
-                      type="email"
-                      required /></label>
-            </div>
-            <div class="mb-6">
-              <label>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="form-group">
+                <label for="name" class="form-label-enhanced">
+                  <span class="text-itcs_dark font-semibold">Full Name</span>
+                  <span class="text-itcs_red ml-1">*</span>
+                </label>
                 <input
-                        type="text"
-                        id="phone"
-                        name="phone"
-                        class="form-input"
-                        placeholder="Phone"
-                        required />
-              </label>
-            </div>
-            <div class="mb-6">
-              <label>
+                  id="name"
+                  name="name"
+                  class="form-input-enhanced"
+                  placeholder="John Doe"
+                  title="Full Name"
+                  type="text"
+                  required />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label-enhanced">
+                  <span class="text-itcs_dark font-semibold">Email Address</span>
+                  <span class="text-itcs_red ml-1">*</span>
+                </label>
                 <input
-                        type="text"
-                        id="address"
-                        name="address"
-                        class="form-input"
-                        placeholder="Address (Street, City, Zip Code)" />
-              </label>
+                  id="email"
+                  name="email"
+                  class="form-input-enhanced"
+                  placeholder="john@example.com"
+                  title="Email"
+                  type="email"
+                  required />
+              </div>
             </div>
-            <div class="mb-6">
-              <label>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="form-group">
+                <label for="phone" class="form-label-enhanced">
+                  <span class="text-itcs_dark font-semibold">Phone Number</span>
+                  <span class="text-itcs_red ml-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  class="form-input-enhanced"
+                  placeholder="(555) 123-4567"
+                  required />
+              </div>
+              <div class="form-group">
+                <label for="address" class="form-label-enhanced">
+                  <span class="text-itcs_dark font-semibold">Address</span>
+                </label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  class="form-input-enhanced"
+                  placeholder="123 Main St, City, ZIP" />
+              </div>
+            </div>
+            <div class="form-group mb-6">
+              <label for="message" class="form-label-enhanced">
+                <span class="text-itcs_dark font-semibold">How Can We Help?</span>
+                <span class="text-itcs_red ml-1">*</span>
+              </label>
               <textarea
-                      id="message"
-                      name="message"
-                      class="form-input"
-                      placeholder="Let us know the details of what you are looking for, and we'll get back to you soon."
-                      rows="8"
-                      required></textarea>
-              </label>
+                id="message"
+                name="message"
+                class="form-input-enhanced"
+                placeholder="Tell us about your HVAC needs, and we'll get back to you promptly..."
+                rows="6"
+                required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary bg-itcs_dark">Submit</button>
+            <div class="text-center">
+              <button type="submit" class="btn-submit-enhanced">
+                <span class="fa fa-paper-plane mr-2"></span>
+                Send Message
+              </button>
+              <p class="text-sm text-gray-500 mt-4">We typically respond within 24 business hours</p>
+            </div>
           </form>
         </div>
       </div>
