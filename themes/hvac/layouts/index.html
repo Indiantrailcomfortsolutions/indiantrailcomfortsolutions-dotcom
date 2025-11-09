@@ -25,18 +25,29 @@
   <!-- /Banner -->
 
   <!-- Features -->
-  <section>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
-      {{ range $i, $e:= site.Data.featured_services }}
-      <div>
-        <a class="text-center p-6 lg:p-8 font-bold text-xl text-itcs_dark hover:bg-itcs_dark hover:text-white block" href="{{ .link | relURL }}">
-          <span class="block mb-4">
-            <span class="fa fa-{{.icon}} fa-2x lg:fa-3x"></span>
-          </span>
-          <span class="font-secondary uppercase">{{ .title | markdownify }}</span>
-        </a>
+  <section class="py-4 bg-gradient-to-b from-white to-itcs_light/30">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        {{ range $i, $e:= site.Data.featured_services }}
+        <div class="group">
+          <a class="relative flex flex-col items-center justify-center text-center p-4 lg:p-5 h-full bg-white rounded-xl shadow-md hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-itcs_dark overflow-hidden" href="{{ .link | relURL }}">
+            <!-- Gradient overlay on hover -->
+            <div class="absolute inset-0 bg-gradient-to-br from-itcs_dark to-itcs_dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+            
+            <!-- Icon container -->
+            <div class="relative z-10 mb-3 w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center rounded-full bg-blue-700 group-hover:bg-white transition-all duration-300 shadow-sm">
+              <span class="fa fa-{{.icon}} text-3xl lg:text-4xl text-white group-hover:!text-blue-700 transition-colors duration-300"></span>
+            </div>
+            
+            <!-- Title -->
+            <span class="relative z-10 font-secondary uppercase font-bold text-base lg:text-xl text-itcs_dark group-hover:text-white transition-colors duration-300 leading-tight">{{ .title | markdownify }}</span>
+            
+            <!-- Decorative element -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-itcs_red to-itcs_dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+          </a>
+        </div>
+        {{ end }}
       </div>
-      {{ end }}
     </div>
   </section>
   <!-- /Features -->
@@ -46,7 +57,10 @@
       <div class="container">
         <div class="grid grid-cols-2 gap-8 items-center">
           <div>
-            <h2 class="font-secondary uppercase text-itcs_dark mb-4">{{ .title }}</h2>
+            <h2 class="font-secondary uppercase text-itcs_dark text-3xl md:text-4xl lg:text-5xl mb-10 relative">
+              {{ .title }}
+              <div class="absolute -bottom-2 left-0 w-64 h-1 bg-gradient-to-r from-itcs_red to-itcs_dark rounded-full"></div>
+            </h2>
             <div>
               <p class="text-lg">{{ .content }}</p>
             </div>
@@ -70,10 +84,9 @@
           </div>
         </div>
         <div class="md:w-1/2 lg:w-2/3">
-          <div class="px-2 md:px-4">
+          <div class="px-2 md:px-4 lg:px-8">
             <div class="mb-4">
               <h3 class="text-itcs_dark uppercase">{{ .title | markdownify }}</h3>
-              <h4 class="text-itcs_dark">{{ .subtitle | markdownify }}</h4>
             </div>
             <div class="px-2 md:px-4 lg:px-6">
               <div class="columns-2 md:columns-3 lg:columns-1 lg:flex lg:flex-auto gap-2 md:gap-4 lg:gap-6">

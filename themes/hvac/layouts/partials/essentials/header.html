@@ -1,10 +1,10 @@
 <header
-  class="header {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-30">
+  class="header-enhanced {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-50">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
       <!-- navbar brand/logo -->
-      <a class="navbar-brand block scale-[.70] lg:scale-[.80]" href="{{ site.Home.RelPermalink }}">
+      <a class="navbar-brand-enhanced block scale-[.70] lg:scale-[.80] transition-transform hover:scale-[.75] lg:hover:scale-[.85]" href="{{ site.Home.RelPermalink }}">
         {{ partial "logo" }}
       </a>
     </div>
@@ -12,12 +12,12 @@
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-dark  lg:order-1 ml-2">
-      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+      class="nav-toggler-enhanced order-3 cursor-pointer flex items-center lg:hidden text-itcs_dark lg:order-1 ml-2">
+      <svg id="show-button" class="h-7 w-7 fill-current block transition-transform hover:scale-110" viewBox="0 0 20 20">
         <title>Menu Open</title>
         <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
       </svg>
-      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+      <svg id="hide-button" class="h-7 w-7 fill-current hidden transition-transform hover:scale-110" viewBox="0 0 20 20">
         <title>Menu Close</title>
         <polygon
           points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
@@ -29,7 +29,7 @@
     <!-- main navbar -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden lg:flex w-full lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 text-lg font-semibold uppercase font-secondary tracking-wide">
+      class="navbar-nav-enhanced order-3 hidden lg:flex w-full lg:order-1 lg:w-auto lg:space-x-1 lg:pb-0 xl:space-x-4 text-base font-semibold uppercase font-secondary tracking-wide">
       {{ $currentPage := . }}
       {{ range site.Menus.main }}
         {{ $menuURL := .URL | absLangURL }}
@@ -79,7 +79,7 @@
         {{ else }}
           <li class="nav-item">
             <a
-              class="nav-link {{ if $active }}active{{- end -}}"
+              class="nav-link-enhanced {{ if $active }}active{{- end -}}"
               {{ if findRE `^http` .URL }}
                 target="_blank" rel="noopener"
               {{ end }}
@@ -98,20 +98,22 @@
       {{ if site.Params.navigation_button.enable }}
         <li class="mt-4 inline-block lg:hidden">
           <a
-            class="inline-block mb-6 rounded-md py-2 px-4 font-bold font-secondary text-2xl lg:inline-block bg-itcs_red text-white hover:bg-itcs_dark hover:text-white uppercase"
+            class="cta-button-mobile inline-block mb-6 rounded-lg py-3 px-6 font-bold font-secondary text-xl lg:inline-block bg-itcs_red text-white hover:bg-itcs_dark hover:text-white uppercase shadow-lg transition-all"
             href="{{ site.Params.navigation_button.link | relLangURL }}">
+            <span class="fa fa-calendar-check mr-2"></span>
             {{ site.Params.navigation_button.label }}
           </a>
         </li>
       {{ end }}
     </ul>
 
-    <div class="py-6 order-1 ml-auto flex items-center gap-4 md:order-2 lg:ml-0">
+    <div class="py-6 order-1 ml-auto flex items-center gap-3 md:gap-4 md:order-2 lg:ml-0">
       <!-- navigation btn -->
       {{ if site.Params.navigation_button.enable }}
         <a
                 href="{{ site.Params.navigation_button.link | relLangURL }}"
-                class="rounded-md py-2 px-4 hidden font-bold font-secondary text-2xl lg:inline-block border border-itcs_red bg-itcs_red text-white shadow-lg shadow-itcs_red/80 hover:bg-itcs_dark hover:shadow-itcs_dark/80 hover:border-itcs_dark uppercase">
+                class="cta-button-enhanced hidden lg:inline-flex items-center rounded-lg py-2.5 px-5 font-bold font-secondary text-lg border-2 border-itcs_red bg-itcs_red text-white shadow-lg shadow-itcs_red/40 hover:bg-white hover:text-itcs_red hover:shadow-itcs_red/60 uppercase transition-all duration-300">
+          <span class="fa fa-calendar-check mr-2"></span>
           {{ site.Params.navigation_button.label }}
         </a>
       {{ end }}
@@ -120,8 +122,9 @@
       {{ if site.Params.phone_number.enable }}
         <a
                 href="{{ site.Params.phone_number.link | safeURL }}"
-                class="text-xl md:text-2xl font-bold text-itcs_dark hover:text-itcs_light">
-          <span class="fa fa-phone mr-2"></span>{{ site.Params.phone_number.label }}
+                class="phone-link-enhanced flex items-center text-lg md:text-xl lg:text-2xl font-bold text-itcs_dark hover:text-itcs_red transition-colors duration-300">
+          <span class="fa fa-phone mr-2 text-itcs_red"></span>
+          <span class="hidden sm:inline">{{ site.Params.phone_number.label }}</span>
         </a>
       {{ end }}
     </div>

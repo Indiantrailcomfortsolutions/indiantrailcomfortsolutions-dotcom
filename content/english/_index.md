@@ -7,8 +7,7 @@ mission:
   image: "/uploads/furnace_install.jpg"
   imageAlt: "photo of installed AC Unit"
 service_areas:
-  title: "Serving Indian Trail, NC & Beyond"
-  subtitle: "Proudly Serving Indian Trail, NC & Surrounding Areas"
+  title: "Proudly Serving Indian Trail, NC & Surrounding Areas"
   enable: true
   image: "/uploads/areas_served.png"
   imageAlt: "Map of areas we serve surrounding Indian Trail, NC"
