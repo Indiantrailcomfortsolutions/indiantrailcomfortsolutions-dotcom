@@ -45,11 +45,11 @@ export default {
         }
 
         if (!env.RESEND_API_KEY || !env.FROM_EMAIL || !env.TO_EMAIL) {
-            return makeResponse(500, 'App Not Configured')
+            return makeResponse(500, `App Not Configured: ${!env.RESEND_API_KEY ? 'Missing RESEND_API_KEY. ' : ''}${!env.FROM_EMAIL ? 'Missing FROM_EMAIL. ' : ''}${!env.TO_EMAIL ? 'Missing TO_EMAIL.' : ''}`)
         }
 
         if (request.method !== 'POST') {
-            return makeResponse(405, 'Method Not Allowed')
+            return makeResponse(405, `Method Not Allowed`)
         }
 
         const requestBody = (await request.json()) as RequestBody
