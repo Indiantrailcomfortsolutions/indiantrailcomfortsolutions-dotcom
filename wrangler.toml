@@ -5,6 +5,10 @@ compatibility_date = "2025-07-31"
 main = "./worker.ts"
 keep_vars = true
 
+[vars]
+FROM_EMAIL = "noreply@indiantrailcomfortsolutions.com"
+TO_EMAIL = "indiantrailcomfortsolutions@gmail.com"
+
 [build]
 command = "chmod a+x build.sh && ./build.sh"
 
