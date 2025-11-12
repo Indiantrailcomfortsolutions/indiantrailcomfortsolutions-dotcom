@@ -3,6 +3,7 @@
 name = "indiantrailcomfortsolutions-web"
 compatibility_date = "2025-07-31"
 main = "./worker.ts"
+keep_vars = true
 
 [build]
 command = "chmod a+x build.sh && ./build.sh"
