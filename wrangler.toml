@@ -2,6 +2,7 @@
 
 name = "indiantrailcomfortsolutions-web"
 compatibility_date = "2025-07-31"
+main = "./dist/worker/index.js"
 
 [build]
 command = "chmod a+x build.sh && ./build.sh"
