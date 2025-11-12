@@ -11,7 +11,7 @@ Thank you for reaching out to Indian Trail Comfort Solutions. We appreciate your
 
 ✓ **Quick Response**: A member of our team will review your request and contact you within 24 hours during business days.
 
-✓ **Expert Solutions**: Whether you need emergency repairs, routine maintenance, or a new system installation, we're here to help.
+✓ **Expert Solutions**: Whether you need emergency repairs, or routine maintenance, we're here to help.
 
 ✓ **Personalized Service**: We'll discuss your specific needs and provide tailored recommendations for your home comfort.
 
