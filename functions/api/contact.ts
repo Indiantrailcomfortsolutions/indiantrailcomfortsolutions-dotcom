@@ -57,12 +57,12 @@ export async function onRequestPost(context: AppContext): Promise<Response> {
     <style media="all" type="text/css">
 @media all {
   .btn-primary table td:hover {
-    background-color: #ec0867 !important;
+    background-color: #01359a !important;
   }
 
   .btn-primary a:hover {
-    background-color: #ec0867 !important;
-    border-color: #ec0867 !important;
+    background-color: #01359a !important;
+    border-color: #01359a !important;
   }
 }
 @media only screen and (max-width: 640px) {
